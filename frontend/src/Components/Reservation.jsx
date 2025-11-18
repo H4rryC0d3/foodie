@@ -18,15 +18,15 @@ const Reservation = () => {
         e.preventDefault();
         try {
             const { data } = await axios.post(
-                "https://foodie-g5yq.onrender.com/api/v1/reservation/send",
-                { firstName, lastName, email, phone, date, time },
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    withCredentials: true,
-                }
-            );
+    "https://foodie-g5yq.onrender.com/api/v1/reservation/send",
+    { firstName, lastName, email, phone, date, time },
+    {
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }
+);
+
             toast.success(data.message);
             setFirstName("");
             setLastName("");
@@ -218,4 +218,5 @@ const ReservationSection = styled.section`
         }
     }
 `;
+
 
