@@ -14,7 +14,7 @@ app.use(
         origin: [
             "http://localhost:3000", 
             "http://localhost:5173",
-            "https://foodie-spot-28.vercel.app"
+           "https://foodie-orpin-pi.vercel.app" 
         ],
         methods: ["GET", "POST", "PUT", "DELETE"],
         credentials: true,
@@ -41,3 +41,4 @@ dbConnection();
 app.use(errorMiddleware);
 
 export default app;
+
