@@ -10,17 +10,17 @@ dotenv.config({ path: "./config/config.env" });
 
 // ✅ CORS Configuration (Allow local + deployed frontend)
 app.use(
-    cors({
-        origin: [
-            "http://localhost:3000", 
-            "http://localhost:5173",
-           "https://foodie-orpin-pi.vercel.app" 
-        ],
-        methods: ["GET", "POST", "PUT", "DELETE"],
-        credentials: true,
-        allowedHeaders: ["Content-Type", "Authorization"],
-    })
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://foodie-orpin-pi.vercel.app" // ✅ your actual frontend!
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type"],
+  })
 );
+
 
 // ✅ Middleware to parse JSON & URL-encoded data
 app.use(express.json());
@@ -41,4 +41,5 @@ dbConnection();
 app.use(errorMiddleware);
 
 export default app;
+
 
