@@ -1,10 +1,29 @@
 import React from "react";
-import styled from "styled-components";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <footer>
       <div className="container">
+        <div className="footer-content">
+          <div className="footer-section">
+            <h3>Harry's Restaurant</h3>
+            <p>Serving authentic Indian vegetarian cuisine with love, tradition, and excellence since 2010.</p>
+            <p>We are committed to providing an exceptional dining experience with every visit.</p>
+          </div>
+          <div className="footer-section">
+            <h3>Contact Information</h3>
+            <p>123 Food Street, Hyderabad</p>
+            <p> +91 98765 43210</p>
+            <p> reservations@harrysrestaurant.com</p>
+          </div>
+          <div className="footer-section">
+            <h3>Opening Hours</h3>
+            <p><strong>Monday - Friday</strong><br/>11:00 AM - 11:00 PM</p>
+            <p><strong>Saturday - Sunday</strong><br/>10:00 AM - 12:00 AM</p>
+            <p><strong>Kitchen Closes:</strong> 30 minutes before closing</p>
+          </div>
+        </div>
         <div className="banner">
           <div className="left">HARRY'S</div>
           <div className="right">
@@ -20,93 +39,12 @@ const Footer = () => {
             <p>All Rights Reserved By @harshpadiyar.</p>
           </div>
         </div>
+        <div className="footer-bottom">
+          <p>© 2025 Harry's Restaurant. All Rights Reserved.</p>
+        </div>
       </div>
-    </FooterContainer>
+    </footer>
   );
 };
 
 export default Footer;
-
-const FooterContainer = styled.footer`
-  background: #f9fbf2;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: fit-content;
-  padding: 20px 20px 10px 20px;
-
-  .container {
-    max-width: 1500px;
-    min-width: 1500px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .banner {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .banner:first-child {
-    padding-bottom: 30px;
-    margin-bottom: 20px;
-    position: relative;
-  }
-
-  .banner:first-child::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 3px;
-    background: #111;
-  }
-
-  .banner:first-child .left {
-    font-size: 1.75rem;
-  }
-
-  .banner:last-child .left {
-    font-size: 18px;
-    color: #333;
-  }
-
-  .banner:last-child .left a {
-    color: #333;
-  }
-
-  .banner:last-child .left a:hover {
-    color: #111;
-    transition: 0.3s;
-    font-weight: bold;
-  }
-
-  .banner .right {
-    text-align: end;
-    font-size: 18px;
-    color: #333;
-  }
-
-  @media (max-width: 1520px) {
-    .container {
-      min-width: 100%;
-      padding: 0 20px;
-    }
-  }
-
-  @media (max-width: 530px) {
-    .banner:first-child {
-      flex-direction: column;
-      gap: 15px;
-    }
-    .banner:first-child .left,
-    .banner .right {
-      text-align: center;
-    }
-    .banner {
-      flex-direction: column;
-      text-align: center;
-      gap: 7px;
-    }
-  }
-`;

@@ -3,9 +3,9 @@ import { Reservation } from "../models/reservationSchema.js";
 export const sendReservation = async (req, res) => {
     console.log("📩 Received reservation:", req.body);
 
-    const { firstName, lastName, email, phone, date, time } = req.body;
+    const { firstName, lastName, email, phone, date, time, guests } = req.body;
 
-    if (!firstName || !lastName || !email || !phone || !date || !time) {
+    if (!firstName || !lastName || !email || !phone || !date || !time || !guests) {
         return res.status(400).json({ success: false, message: "Missing fields" });
     }
 
@@ -17,7 +17,8 @@ export const sendReservation = async (req, res) => {
             email,
             phone,
             date,
-            time
+            time,
+            guests
         });
 
         console.log("✅ Saved in DB:", newReservation);

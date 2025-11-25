@@ -1,24 +1,25 @@
 {
+   
     "data": [
         {"ourQualities" : [
-            {
-                "id": 1,
-                "image": "./quality_food.svg",
-                "title": "QUALITY FOOD",
-                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat." 
-            },
-            {
-                "id": 2,
-                "image": "./super_taste.svg",
-                "title": "SUPER TASTE",
-                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing sit amet elit. Sit voluptates quaerat pariatur." 
-            },
-            {
-                "id": 3,
-                "image": "./fast_delivery.svg",
-                "title": "FAST DELIVERY",
-                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat." 
-            }
+           {
+      "id": 1,
+      "image": "https://api.iconify.design/mdi:food-drumstick.svg?color=%236366f1&width=80&height=80",
+      "title": "QUALITY FOOD",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat."
+    },
+    {
+      "id": 2,
+      "image": "https://api.iconify.design/mdi:silverware-fork-knife.svg?color=%236366f1&width=80&height=80",
+      "title": "SUPER TASTE",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing sit amet elit. Sit voluptates quaerat pariatur."
+    },
+    {
+      "id": 3,
+      "image": "https://api.iconify.design/mdi:truck-delivery.svg?color=%236366f1&width=80&height=80",
+      "title": "FAST DELIVERY",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat."
+    }
         ],
         "dishes": [
             {

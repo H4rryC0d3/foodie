@@ -18,14 +18,14 @@ const Menu = () => {
                 {data[0].dishes.map((element) => {
                     return (
                         <div className="card" key={element.id}>
-                        <img src={element.image} alt={element.title} />
-                        <h3>{element.title}</h3>
+                            <img src={element.image} alt={element.title} />
+                            <h3>{element.title}</h3>
+                            <span className="price">{element.price}</span>
                         </div>
                     );
                 })}
             </div>
         </div>
-      
     </section>
   )
 }

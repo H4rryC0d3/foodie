@@ -1,6 +1,9 @@
 import mongoose from "mongoose";
 
 export const dbConnection = () => {
+
+    mongoose.set("strictQuery", false);
+
     mongoose
         .connect(process.env.MONGO_URI, {
             dbName: "RESTAURENT",

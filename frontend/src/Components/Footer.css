@@ -1,0 +1,203 @@
+footer {
+  background: #2d2d2d;
+  color: #d4cec1;
+  padding: 30px 0 0;
+  position: relative;
+}
+
+footer .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(212, 206, 193, 0.15);
+}
+
+.footer-section h3 {
+  color: #d4af7a;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.footer-section p {
+  color: #b8b3a7;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.footer-section p strong {
+  color: #d4cec1;
+  font-weight: 600;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+/* Contact Information Icons */
+.footer-section:nth-child(2) p:nth-child(2)::before {
+  content: "📍 ";
+  margin-right: 8px;
+}
+
+.footer-section:nth-child(2) p:nth-child(3)::before {
+  content: "📞 ";
+  margin-right: 8px;
+}
+
+.footer-section:nth-child(2) p:nth-child(4)::before {
+  content: "✉️ ";
+  margin-right: 8px;
+}
+
+/* Banner Sections */
+footer .banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(212, 206, 193, 0.1);
+}
+
+footer .banner:last-of-type {
+  border-bottom: none;
+  padding-bottom: 12px;
+}
+
+footer .banner .left {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #d4af7a;
+  letter-spacing: 1.5px;
+}
+
+footer .banner .left p {
+  font-size: 13px;
+  color: #b8b3a7;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 4px 0 0;
+}
+
+footer .banner .right p {
+  color: #b8b3a7;
+  font-size: 13px;
+  margin: 2px 0;
+  font-weight: 300;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  padding: 15px 0;
+  background: #252525;
+}
+
+.footer-bottom p {
+  color: #b8b3a7;
+  font-size: 13px;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* Hover Effects */
+.footer-section p {
+  transition: color 0.3s ease;
+}
+
+.footer-section p:hover {
+  color: #d4cec1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+  
+  .footer-section:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 25px 0 0;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-bottom: 20px;
+  }
+  
+  .footer-section:last-child {
+    grid-column: 1;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  footer .banner {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 12px 0;
+  }
+  
+  footer .banner .left {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 520px) {
+  footer {
+    padding: 20px 0 0;
+  }
+  
+  .footer-content {
+    gap: 20px;
+    padding-bottom: 15px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+  
+  .footer-section p {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  
+  footer .banner {
+    padding: 10px 0;
+  }
+  
+  footer .banner .left {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  
+  footer .banner .right p,
+  footer .banner .left p {
+    font-size: 12px;
+  }
+  
+  .footer-bottom {
+    padding: 12px 0;
+  }
+}

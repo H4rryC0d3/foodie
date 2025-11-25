@@ -24,7 +24,7 @@ const reservationSchema = new mongoose.Schema({
         required: [true, "Phone number is required"],
         validate: {
             validator: function (v) {
-                return /^[0-9]{10}$/.test(v); // ✅ 10 digits instead of 11
+                return /^[0-9]{10}$/.test(v);
             },
             message: "Phone number must contain exactly 10 digits!",
         },
@@ -36,6 +36,12 @@ const reservationSchema = new mongoose.Schema({
     date: {
         type: String,
         required: [true, "Date is required"],
+    },
+
+    // ✅ NEW FIELD ADDED
+    guests: {
+        type: String,
+        required: [true, "Number of guests is required"],
     },
 });
 

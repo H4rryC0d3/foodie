@@ -1,64 +1,567 @@
 .success {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f5f1e8 0%, #ede8dd 50%, #e8e0d0 100%);
+  position: relative;
+  text-align: center;
+  padding-top: 100px;
+  overflow: hidden;
+}
+
+.success::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05;
+  z-index: 0;
+}
+
+.success .container {
+  max-width: 1200px;
+  width: 90%;
+  padding: 50px 60px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 3px solid rgba(253, 181, 0, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.success .container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 35px 70px rgba(253, 181, 0, 0.3);
+  border-color: #fdb500;
+}
+
+/* Left Section */
+.success .left-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right Section */
+.success .right-section {
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Success Icon Styles */
+.success .success-icon {
+  margin-bottom: 20px;
+  color: #fdb500;
+  font-size: 80px;
+  line-height: 1;
+}
+
+.success .success-icon svg {
+  filter: drop-shadow(0 4px 12px rgba(253, 181, 0, 0.4));
+}
+
+.success .container img {
+  width: 250px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.success .container img:hover {
+  transform: scale(1.05);
+}
+
+.success .container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.success .container h1 .highlight {
+  color: #fdb500;
+  position: relative;
+  display: inline-block;
+}
+
+/* Success Message */
+.success .success-message {
+  color: #666;
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  font-weight: 300;
+}
+
+/* Progress Bar */
+.success .progress-container {
+  width: 100%;
+  margin: 30px 0 25px;
+}
+
+.success .progress-text {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 12px;
+  text-align: left;
+  font-weight: 300;
+}
+
+.success .progress-text strong {
+  color: #fdb500;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.success .progress-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(253, 181, 0, 0.2);
+  border-radius: 50px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.success .progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #fdb500 0%, #e5a300 100%);
+  border-radius: 50px;
+  box-shadow: 0 0 15px rgba(253, 181, 0, 0.6);
+  position: relative;
+}
+
+.success .progress-fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+/* Button Group */
+.success .button-group {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.success .primary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  background: #fdb500;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(253, 181, 0, 0.3);
+}
+
+.success .primary-btn:hover {
+  background: #e5a300;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(253, 181, 0, 0.5);
+}
+
+.success .primary-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.success .primary-btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Confetti Animation */
+.success .confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.success .confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: -20px;
+  opacity: 0;
+  animation: confetti-fall 4s linear infinite;
+  border-radius: 2px;
+}
+
+/* Animations */
+@keyframes confetti-fall {
+  0% {
+    top: -10%;
+    opacity: 1;
+    transform: translateX(0) rotateZ(0deg);
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+    transform: translateX(100px) rotateZ(720deg);
+  }
+}
+
+@keyframes shrink {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0) rotate(-180deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2) rotate(10deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bounce-in {
+  animation: bounce-in 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.slide-up.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.slide-up.delay-2 {
+  animation-delay: 0.4s;
+}
+
+.slide-up.delay-3 {
+  animation-delay: 0.6s;
+}
+
+.slide-up.delay-4 {
+  animation-delay: 0.8s;
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Large Desktops */
+@media (max-width: 1280px) {
+  .success .container {
+    max-width: 95%;
+    padding: 45px 50px;
+    gap: 40px;
+  }
+
+  .success .container img {
+    width: 220px;
+  }
+}
+
+/* Medium Desktops/Laptops */
+@media (max-width: 1024px) {
+  .success {
+    padding-top: 90px;
+    padding-bottom: 40px;
+  }
+
+  .success .container {
+    flex-direction: column;
+    padding: 40px 45px;
+    gap: 35px;
+  }
+
+  .success .left-section,
+  .success .right-section {
+    width: 100%;
     align-items: center;
-    background: url("/background.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
     text-align: center;
+  }
+
+  .success .success-message,
+  .success .progress-text {
+    text-align: center;
+  }
+
+  .success .button-group {
+    justify-content: center;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .success {
+    padding-top: 85px;
+    padding-bottom: 30px;
   }
   
   .success .container {
-    max-width: 600px;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%;
+    padding: 40px 30px;
   }
   
+  .success .container h1 {
+    font-size: 2rem;
+  }
+  
+  .success .success-icon {
+    font-size: 70px;
+  }
+
   .success .container img {
-    width: 150px;
-    margin-bottom: 20px;
+    width: 180px;
+  }
+
+  .success .success-message {
+    font-size: 16px;
+  }
+}
+
+/* Large Mobile Phones */
+@media (max-width: 640px) {
+  .success {
+    padding-top: 80px;
+    padding-bottom: 25px;
+  }
+  
+  .success .container {
+    padding: 35px 25px;
   }
   
   .success .container h1 {
     font-size: 1.75rem;
-    font-weight: 500;
-    color: #333;
+  }
+  
+  .success .container img {
+    width: 150px;
+  }
+  
+  .success .success-message {
+    font-size: 15px;
+  }
+  
+  .success .button-group {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .success .primary-btn {
+    width: 100%;
+  }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 520px) {
+  .success {
+    padding-top: 75px;
+    padding-bottom: 20px;
+  }
+  
+  .success .container {
+    padding: 30px 20px;
+  }
+  
+  .success .container h1 {
+    font-size: 1.6rem;
+    letter-spacing: -0.5px;
+  }
+  
+  .success .success-icon {
+    font-size: 60px;
     margin-bottom: 15px;
   }
   
-  .success .container a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #111;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
+  .success .container img {
+    width: 130px;
   }
   
-  .success .container a svg {
-    margin-left: 8px;
+  .success .success-message {
+    font-size: 14px;
+    line-height: 1.6;
   }
   
-  .success .container a:hover {
-    background: #880909;
+  .success .progress-text {
+    font-size: 15px;
   }
   
-  /* Responsive Design */
-  @media (max-width: 600px) {
-    .success .container {
-      max-width: 90%;
-      padding: 15px;
-    }
-    .success .container h1 {
-      font-size: 1.5rem;
-    }
+  .success .progress-text strong {
+    font-size: 18px;
   }
   
+  .success .primary-btn {
+    width: 100%;
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+}
+
+/* Extra Small Mobile Phones */
+@media (max-width: 375px) {
+  .success {
+    padding-top: 70px;
+    padding-bottom: 15px;
+  }
+  
+  .success .container {
+    padding: 25px 15px;
+  }
+  
+  .success .container h1 {
+    font-size: 1.4rem;
+  }
+  
+  .success .success-icon {
+    font-size: 50px;
+  }
+  
+  .success .container img {
+    width: 110px;
+    margin-bottom: 20px;
+  }
+  
+  .success .success-message {
+    font-size: 13px;
+  }
+  
+  .success .primary-btn {
+    padding: 13px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 320px) {
+  .success .container h1 {
+    font-size: 1.25rem;
+  }
+  
+  .success .success-icon {
+    font-size: 45px;
+  }
+  
+  .success .container img {
+    width: 100px;
+  }
+  
+  .success .success-message {
+    font-size: 12px;
+  }
+  
+  .success .primary-btn {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  .success {
+    min-height: auto;
+    padding-top: 80px;
+    padding-bottom: 30px;
+  }
+  
+  .success .container {
+    padding: 30px;
+    flex-direction: row;
+  }
+  
+  .success .success-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .success .container img {
+    width: 120px;
+    margin-bottom: 15px;
+  }
+  
+  .success .container h1 {
+    font-size: 1.75rem;
+    margin-bottom: 10px;
+  }
+  
+  .success .progress-container {
+    margin: 20px 0;
+  }
+}
